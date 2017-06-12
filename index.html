@@ -12,7 +12,9 @@
     <link rel="stylesheet" type="text/css" href="lib/jqueryEasyUI/themes/icon.css">
     <link rel="stylesheet" type="text/css" href="lib/jqueryEasyUI/demo/demo.css">
     <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.css">
-    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet/less" href="less/index.less">
+    <link rel="stylesheet" href="css/common.css">
+    <script src="lib/less/less.js"></script>
 </head>
 
 <body>
@@ -81,9 +83,7 @@
             <div class="urw-icon">
                 <span class="glyphicon glyphicon-minus icon-clo" aria-hidden="true"></span>
                 <span class="glyphicon glyphicon-plus icon-clo" aria-hidden="true"></span>
-                <span class="glyphicon glyphicon-remove icon-clo" aria-hidden="true"></span>
-                <span class="glyphicon glyphicon-fullscreen icon-clo" aria-hidden="true"></span>
-            </div>
+                <span class="glyphicon glyphicon-remove icon-clo" aria-hidden="true"></span></div>
         </div>
         <!--eyebrow-bar e-->
 
@@ -103,8 +103,8 @@
                         <label class="atl-lab pr">
                             <span class="dl-show">Show</span>
                             <select name="editable_length" aria-controls="editable" class="form-control input-sm">
-                                <option id="val5" value="5">5</option>
-                                <option id="val10" selected value="10">10</option>
+                                <option value="5">5</option>
+                                <option selected value="10">10</option>
                                 <!--<option value="15">15</option>-->
                                 <!--<option value="20">20</option>-->
                             </select>
