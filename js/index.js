@@ -77,48 +77,52 @@ $(function () {
        //测试结果在文本框显示
        $('.inputCount').val("成功通过的数据有:" + greenCount + ',失败的数据有:'+ redCount);
     });
-
+//下拉框页面的选择
+    // $(".form-control").on('change',function (event) {
+    //     var $target = $(event.target);
+    //     if($target.val() == 5) {
+    //         dataAlabama.alListBody = alListBody_5_f;
+    //         dataShow1();
+    //         $(".pagination").show();
+    //
+    //     }else if($target.val() == 10) {
+    //         dataAlabama.alListBody = alListBody_10;
+    //         dataShow1();
+    //         $(".pagination").hide();
+    //     }
+    // });
+    // //右下角页数的展示
+    // $(".pagination").on('click',function (event) {
+    //     var $target = $(event.target);
+    //     if( $target.parent().is('.pagination-1')){
+    //         dataAlabama.alListBody = alListBody_5_f;
+    //         dataShow1();
+    //     }else if($target.parent().is('.pagination-2') || $target.parent().is('.next')){
+    //         dataAlabama.alListBody = alListBody_5_l;
+    //         dataShow1();
+    //     }
+    // });
 
     //nav底部下拉框选项卡的选择
-    $('.easyui-combobox').on('change',function (event) {
-        var $target = $(event.target);
-        if($target.val() == "AL"){
-            dataAlabama.alListBody = alListBody_10;
-                    dataShow1();
-            //下拉框页面的选择
-            // $(".form-control").on('change',function (event) {
-            //     var $target = $(event.target);
-            //     if($target.val() == 5) {
-            //         dataAlabama.alListBody = alListBody_5_f;
-            //         dataShow1();
-            //         $(".pagination").show();
-            //
-            //     }else if($target.val() == 10) {
-            //         dataAlabama.alListBody = alListBody_10;
-            //         dataShow1();
-            //         $(".pagination").hide();
-            //     }
-            // });
-            // //右下角页数的展示
-            // $(".pagination").on('click',function (event) {
-            //     var $target = $(event.target);
-            //     if( $target.parent().is('.pagination-1')){
-            //         dataAlabama.alListBody = alListBody_5_f;
-            //         dataShow1();
-            //     }else if($target.parent().is('.pagination-2') || $target.parent().is('.next')){
-            //         dataAlabama.alListBody = alListBody_5_l;
-            //         dataShow1();
-            //     }
-            // });
-        }else if($target.val() == "AK"){
-            dataAkabama.akListBody == akListBody_10;
-            dataShow2();
-        }else if($target.val() == "AZ"){
-            dataAzabama.azListBody = azListBody_10;
-            dataShow3();
-        }else if($target.val() == "AR"){
-            dataArabama.arListBody = arListBody_10;
-            dataShow4();
+    $('#sel').on('change',function () {
+        var val = $(this).val();
+        if(val == "AL"){
+                //渲染到tbody
+                var strBody = template('tempBody',dataAlabama);
+                $("#editable tbody").html(strBody);
+
+        }else if(val == "AK"){
+            //渲染到tbody
+            var strBody = template('tempBody',dataAkabama);
+            $("#editable tbody").html(strBody);
+        }else if(val == "AZ"){
+            //渲染到tbody
+            var strBody = template('tempBody',dataAzabama);
+            $("#editable tbody").html(strBody);
+        }else if(val == "AR"){
+            //渲染到tbody
+            var strBody = template('tempBody',dataAzabama);
+            $("#editable tbody").html(strBody);
         }
     });
 });
@@ -294,36 +298,6 @@ $(function () {
         {num:"8",item:"编码器测试",id:"1",progress:0.7},
         {num:"9",item:"-GPIO(FPGA_IO)",id:"1",progress:0.3}
     ];
-
-    function dataShow1() {
-    //渲染到tbody
-    var strBody = template('tempBody',dataAlabama);
-    $("#editable tbody").html(strBody);
-}
-    dataShow1();
-
-    function dataShow2() {
-        //渲染到tbody
-        var strBody = template('tempBody',dataAkabama);
-        $("#editable tbody").html(strBody);
-    }
-    dataShow2();
-
-    function dataShow3() {
-        //渲染到tbody
-        var strBody = template('tempBody',dataAzabama);
-        $("#editable tbody").html(strBody);
-    }
-    dataShow3();
-
-    function dataShow4() {
-        //渲染到tbody
-        var strBody = template('tempBody',dataAzabama);
-        $("#editable tbody").html(strBody);
-    }
-    dataShow4();
-
-
 
     //渲染到thead
     var strHead = template("tempHead",dataAlabama);
