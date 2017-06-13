@@ -5,16 +5,14 @@
     <meta charset="UTF-8">
     <title>TestDataSheel</title>
     <meta name="viewport content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"/>
-    <link rel="stylesheet" href="lib/jquery-ui-1.10.2/themes/base/jquery-ui.css">
     <link rel="stylesheet" href="http://jqueryui.com/resources/demos/style.css">
     <link rel="stylesheet" href="lib/titatoggle/dist/titatoggle-dist.css">
     <link rel="stylesheet" type="text/css" href="lib/jqueryEasyUI/themes/default/easyui.css">
     <link rel="stylesheet" type="text/css" href="lib/jqueryEasyUI/themes/icon.css">
     <link rel="stylesheet" type="text/css" href="lib/jqueryEasyUI/demo/demo.css">
     <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.css">
-    <link rel="stylesheet/less" href="less/index.less">
     <link rel="stylesheet" href="css/common.css">
-    <script src="lib/less/less.js"></script>
+    <link rel="stylesheet/less" href="less/index.less">
 </head>
 
 <body>
@@ -152,14 +150,14 @@
     </div>
 </div>
 
-    <!--to minimize the control-->
-    <div class="min-bar">
-        <span>最大化</span>
-    </div>
+    <!--&lt;!&ndash;to minimize the control&ndash;&gt;-->
+    <!--<div class="min-bar">-->
+        <!--<span>最大化</span>-->
+    <!--</div>-->
 
     <!--tBody模板-->
     <script type="text/template" id="tempBody">
-        {{each listBody as v}}
+        {{each alListBody as v}}
         <tr>
             <td>{{v.num}}</td>
             <td>{{v.item}}</td>
@@ -185,14 +183,13 @@
 
     <!--tHead模板-->
     <script type="text/template" id="tempHead">
-        {{each listHead as v}}
+        {{each alListHead as v}}
         <th>{{v}}</th>
         {{/each}}
     </script>
 
-
+    <script src="lib/less/less.js"></script>
     <script src="lib/jquery/jquery.js"></script>
-    <script src="lib/jquery-ui-1.10.2/ui/jquery-ui.js"></script>
     <script src="lib/jqueryEasyUI/jquery.easyui.min.js"></script>
     <script src="lib/template/template-web.js"></script>
     <script src="js/index.js"></script>
